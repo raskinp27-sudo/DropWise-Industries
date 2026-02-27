@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DropWise Industries | The Team</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo.png" alt="DropWise Industries logo" class="logo" />
+      <div class="brand-text">
+        <div class="company-name">DropWise</div>
+        <div class="product-name">Dropix</div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="background-research-problem-definition.html">Background Research &amp; Problem Definition</a></li>
+        <li><a href="ideate-solution.html">Ideate Solution</a></li>
+        <li><a href="final-engineering-design.html">Final Engineering Design</a></li>
+        <li><a href="test-and-reflect.html">Test &amp; Reflect</a></li>
+        <li><a href="the-team.html" class="active">The Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+    <header class="page-header">
+      <h1>The Team</h1>
+      <p class="page-intro">
+        Celebrate the DropWise Industries team behind Dropix and highlight each member’s contributions to creating a safer way to receive.
+      </p>
+    </header>
+
+    <section class="team-grid">
+      <article class="team-member">
+        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
+             alt="Portrait placeholder for Paul Raskin" class="team-photo" />
+        <h2>Paul Raskin</h2>
+        <p class="role">Lead Designer &amp; Systems Thinker</p>
+        <p>
+          Paul focuses on turning research into clear Dropix experiences, connecting secure delivery flows with
+          simple, student-friendly interactions that make receiving safer for everyone.
+        </p>
+      </article>
+
+      <article class="team-member">
+        <img src="https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg?auto=compress&cs=tinysrgb&w=600"
+             alt="Portrait placeholder for Alma Adiel" class="team-photo" />
+        <h2>Alma Adiel</h2>
+        <p class="role">Prototype &amp; Testing Lead</p>
+        <p>
+          Alma leads Dropix prototyping and testing sessions, gathering evidence about package safety and using feedback
+          to refine how secure drop boxes and instructions work together.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
