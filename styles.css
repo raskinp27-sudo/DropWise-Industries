@@ -50,7 +50,7 @@ a {
 }
 
 main {
-  padding: 2rem 1.5rem 3rem;
+  padding: 2.5rem 1.5rem 4rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -137,26 +137,119 @@ main {
   font-weight: 600;
 }
 
-/* Hero / Home */
+/* Landing page: entrance animations (lightweight, no JS) */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.landing-hero .hero-logo {
+  animation: heroReveal 0.6s ease-out both;
+}
+
+.landing-hero .hero-title {
+  animation: heroReveal 0.55s ease-out 0.08s both;
+}
+
+.landing-hero .hero-slogan {
+  animation: heroReveal 0.5s ease-out 0.16s both;
+}
+
+.landing-hero .hero-tagline {
+  animation: heroReveal 0.5s ease-out 0.24s both;
+}
+
+.landing-problem {
+  animation: fadeSlideUp 0.55s ease-out 0.4s both;
+}
+
+.landing-solution .card-reveal:nth-child(1) {
+  animation: fadeSlideUp 0.5s ease-out 0.55s both;
+}
+
+.landing-solution .card-reveal:nth-child(2) {
+  animation: fadeSlideUp 0.5s ease-out 0.65s both;
+}
+
+.landing-solution .card-reveal:nth-child(3) {
+  animation: fadeSlideUp 0.5s ease-out 0.75s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-hero .hero-logo,
+  .landing-hero .hero-title,
+  .landing-hero .hero-slogan,
+  .landing-hero .hero-tagline,
+  .landing-problem,
+  .landing-solution .card-reveal {
+    animation: none;
+  }
+}
+
+/* Flow sections – softer transitions and rhythm */
+
+.flow-section {
+  margin-bottom: 3rem;
+}
+
+.flow-section:last-child {
+  margin-bottom: 0;
+}
+
+.flow-block {
+  margin-bottom: 2rem;
+}
+
+.flow-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Hero / Home – stronger visual emphasis */
 
 .hero {
-  margin-top: 2.25rem;
-  margin-bottom: 2rem;
-  padding: 2.5rem 2rem;
-  border-radius: 18px;
-  background: radial-gradient(circle at top left, var(--color-highlight) 0, transparent 55%),
-              radial-gradient(circle at bottom right, var(--color-accent) 0, transparent 55%),
-              #ffffff;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  margin-top: 0;
+  margin-bottom: 3.5rem;
+  padding: 4rem 2.75rem 4.5rem;
+  border-radius: 24px;
+  background: radial-gradient(ellipse 130% 90% at 15% 0%, var(--color-highlight) 0%, transparent 48%),
+              radial-gradient(ellipse 110% 70% at 88% 100%, var(--color-accent) 0%, transparent 45%),
+              linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.97) 100%);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6);
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 109, 119, 0.06), rgba(64, 78, 124, 0.06));
+  background: linear-gradient(135deg, rgba(0, 109, 119, 0.05), rgba(64, 78, 124, 0.05));
   mix-blend-mode: soft-light;
   pointer-events: none;
 }
@@ -168,41 +261,79 @@ main {
 }
 
 .hero-logo {
-  width: 120px;
+  width: 128px;
   height: auto;
   max-width: 40%;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.1));
 }
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-size: clamp(2.75rem, 5vw, 3.75rem);
   margin: 0 0 0.5rem;
   color: var(--color-dark);
+  letter-spacing: -0.02em;
 }
 
 .hero-slogan {
-  font-size: 1.2rem;
-  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  margin: 0 0 0.85rem;
   color: var(--color-primary);
   font-weight: 600;
 }
 
 .hero-tagline {
   margin: 0;
-  font-size: 1rem;
-  max-width: 32rem;
+  font-size: 1.08rem;
+  max-width: 34rem;
+  line-height: 1.65;
+}
+
+/* Problem → Solution → Impact flow: visual connection */
+
+.landing-problem {
+  border-left: 3px solid var(--color-primary);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-problem:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.landing-solution {
+  position: relative;
+}
+
+.landing-solution .image-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.landing-solution .image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.landing-solution .landing-impact {
+  border-top: 2px solid rgba(121, 184, 169, 0.35);
+  padding-top: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .landing-solution .landing-impact {
+    border-top: none;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 0.25rem;
+  }
 }
 
 /* Abstract & Page Layout */
 
-.abstract,
-.page {
-  background: rgba(255, 255, 255, 0.92);
-  border-radius: 18px;
-  padding: 2rem 2.25rem;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+.abstract {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+  border-radius: 24px;
+  padding: 2.75rem 2.5rem 3rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .abstract h2,
@@ -216,39 +347,106 @@ main {
 
 .abstract h2 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.abstract p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 56ch;
 }
 
 .page {
-  margin-top: 2.25rem;
+  margin-top: 2.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 250, 252, 0.97) 100%);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 3rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.flow-page .page-header {
+  margin-bottom: 2rem;
 }
 
 .page-header h1 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   font-size: clamp(1.8rem, 3vw, 2.3rem);
 }
 
 .page-intro {
   margin-top: 0;
-  margin-bottom: 1.75rem;
-  font-size: 1rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
   color: #394357;
+  line-height: 1.65;
 }
 
 .content-section {
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1.75rem;
+  padding-bottom: 0.25rem;
+  border-top: none;
+  position: relative;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 109, 119, 0.12), transparent);
+}
+
+.content-section:first-child::before {
+  display: none;
 }
 
 .content-section + .content-section {
-  margin-top: 1.5rem;
+  margin-top: 0;
 }
 
 .content-section h2 {
   margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.content-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.5rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.content-list li {
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+}
+
+.content-list li:last-child {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.highlight-block {
+  background: linear-gradient(135deg, rgba(121, 184, 169, 0.08), rgba(184, 192, 255, 0.06));
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.highlight-block::before {
+  display: none;
 }
 
 p {
@@ -261,23 +459,22 @@ p {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .team-member {
-  background: #f8fafb;
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.95) 100%);
+  border-radius: 20px;
+  padding: 1.75rem 1.75rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.7);
 }
 
 .team-member h2 {
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 .team-member .role {
@@ -288,10 +485,27 @@ p {
   color: var(--color-primary);
 }
 
+.team-contact {
+  margin-top: 0.5rem;
+  margin-bottom: 0 !important;
+  font-size: 0.95rem;
+}
+
+.team-contact a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.team-contact a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
 .team-photo {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
+  border-radius: 14px;
+  margin-bottom: 1rem;
   object-fit: cover;
   max-height: 220px;
 }
@@ -299,18 +513,17 @@ p {
 /* Imagery grid on home */
 
 .image-grid {
-  margin-top: 2.25rem;
+  margin-top: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .image-card {
-  background: #ffffff;
-  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(252, 253, 253, 0.98) 100%);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .image-card img {
@@ -321,14 +534,15 @@ p {
 
 .image-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
-  margin: 0.9rem 1.25rem 0.4rem;
+  font-size: 1.12rem;
+  margin: 1.1rem 1.35rem 0.4rem;
   color: var(--color-dark);
 }
 
 .image-card p {
-  margin: 0 1.25rem 1.1rem;
+  margin: 0 1.35rem 1.25rem;
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Footer */
@@ -355,10 +569,22 @@ p {
     padding-inline: 1.1rem;
   }
 
-  .hero,
+  .hero {
+    padding: 2.5rem 1.5rem 3rem;
+    margin-bottom: 2.5rem;
+  }
+
   .abstract,
   .page {
     padding-inline: 1.5rem;
+  }
+
+  .flow-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .image-grid {
+    gap: 1.5rem;
   }
 }
 
