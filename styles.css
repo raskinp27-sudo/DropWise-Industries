@@ -306,6 +306,168 @@ main {
   font-weight: bold;
 }
 
+/* Background: Existing Solutions (competitors) */
+
+.existing-solutions {
+  margin-top: 1.5rem;
+}
+
+.competitor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.competitor-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.competitor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.competitor-media {
+  height: 160px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(121, 184, 169, 0.18);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.95rem;
+}
+
+.competitor-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(207, 219, 213, 0.25), rgba(0, 109, 119, 0.06));
+  pointer-events: none;
+}
+
+.competitor-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  margin: 0 0 0.25rem;
+  font-size: 1.18rem;
+}
+
+.competitor-desc {
+  margin: 0.55rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.theft-visual {
+  margin-top: 2.25rem;
+  max-width: 1100px;
+}
+
+.theft-media {
+  height: 240px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(184, 192, 255, 0.22);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.theft-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 109, 119, 0.06));
+  pointer-events: none;
+}
+
+.theft-caption {
+  margin: 0.75rem 0 0;
+  color: #394357;
+  line-height: 1.65;
+}
+
+/* Ideate: Solution Concepts */
+
+.solution-concepts {
+  margin-top: 1.5rem;
+}
+
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.concept-card {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 18px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.concept-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.concept-media {
+  height: 150px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(184, 192, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.95rem;
+}
+
+.concept-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(207, 219, 213, 0.2), rgba(64, 78, 124, 0.06));
+  pointer-events: none;
+}
+
+.concept-card h3 {
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  margin: 0 0 0.25rem;
+  font-size: 1.18rem;
+}
+
+.concept-row {
+  margin: 0.6rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 720px) {
+  .competitor-media {
+    height: 150px;
+  }
+
+  .theft-media {
+    height: 210px;
+  }
+
+  .concept-media {
+    height: 130px;
+  }
+}
+
 /* Header & Navigation */
 
 .site-header {
