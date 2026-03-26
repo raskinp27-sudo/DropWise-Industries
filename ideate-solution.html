@@ -31,80 +31,241 @@
     <section class="subpage-hero">
       <div class="subpage-section">
         <h1 class="subpage-title">Ideate Solution</h1>
-        <p class="subpage-intro">How we brainstormed, evaluated, and chose Dropix as the secure, automatic package box that locks when a package is placed inside.</p>
+        <p class="subpage-intro">From design goals and competitive landscape to three concrete concepts—ending with ParcelGuard as our chosen direction.</p>
       </div>
     </section>
 
-    <section class="subpage-section">
-      <h2 class="section-heading">Brainstormed Ideas</h2>
-      <div class="idea-cards">
-        <div class="idea-card">
-          <p>Barcode-activated lock system for delivery drivers</p>
-        </div>
-        <div class="idea-card">
-          <p>Keypad-based locking system</p>
-        </div>
-        <div class="idea-card">
-          <p>Autonomous locking system using sensors</p>
-        </div>
+    <section class="subpage-section matrix-section">
+      <h2 class="section-heading">Key Design Goals (Solution Requirements)</h2>
+      <p class="matrix-legend">Scoring: <strong>High</strong> = 3 &middot; <strong>Medium</strong> = 2 &middot; <strong>Low</strong> = 1 &middot; <strong>Not at all</strong> = 0</p>
+      <div class="matrix-scroll">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th scope="col">Requirement</th>
+              <th scope="col">Importance</th>
+              <th scope="col">Impact</th>
+              <th scope="col">Feasibility</th>
+              <th scope="col">Total</th>
+              <th scope="col">Essential / Non-Essential</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>The solution should notify the user immediately upon unauthorized package removal</strong>
+                <ul class="matrix-bullets">
+                  <li>Alerting the user through a notification</li>
+                  <li>Alarm system</li>
+                  <li>Strobing lights</li>
+                </ul>
+              </td>
+              <td>3</td><td>3</td><td>3</td><td>9</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Solution must be available to apartments and houses (not dependent on house size or location)</strong>
+                <ul class="matrix-bullets">
+                  <li>Could be digital, like reliable notifications</li>
+                  <li>Modular to attach to different surfaces (porch, door, railing)</li>
+                  <li>Small and discreet enough for varied residential aesthetics</li>
+                </ul>
+              </td>
+              <td>3</td><td>3</td><td>3</td><td>9</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Solution needs to be intuitive and easy to use with minimal user time</strong>
+                <ul class="matrix-bullets">
+                  <li>Simple user interface on the product</li>
+                  <li>Directions on a mobile device</li>
+                  <li>Comes with a manual</li>
+                </ul>
+              </td>
+              <td>3</td><td>2</td><td>3</td><td>8</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The solution must reliably detect when a package has been placed or removed</strong>
+                <ul class="matrix-bullets">
+                  <li>Small tracking device</li>
+                  <li>Distance sensor</li>
+                  <li>Weight sensor</li>
+                </ul>
+              </td>
+              <td>3</td><td>3</td><td>2</td><td>8</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The design must accommodate standard package sizes</strong>
+                <ul class="matrix-bullets">
+                  <li>Locking mechanism modular or adjustable to secure different sizes</li>
+                  <li>Base platform large enough for a medium package</li>
+                  <li>Detection logic digital and not dependent on a specific package</li>
+                </ul>
+              </td>
+              <td>3</td><td>3</td><td>2</td><td>8</td><td>Essential</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </section>
+
+    <section class="subpage-section existing-solutions">
+      <h2 class="section-heading">Competitors / Existing Solutions</h2>
+      <p class="section-lead">How today&rsquo;s alternatives work—and where they leave packages exposed.</p>
+
+      <div class="competitor-grid" aria-label="Competitor solutions">
+        <article class="competitor-card">
+          <div class="competitor-media" style="background-image: url('ring.png')" role="img" aria-label="Ring Camera"></div>
+          <h3>Ring Camera</h3>
+          <p class="competitor-desc"><strong>Function:</strong> Records in real time the surroundings of a doorstep</p>
+          <p class="competitor-desc"><strong>Disadvantages:</strong> Expensive ($60&ndash;300) &middot; Limited coverage with one camera &middot; Does not actively prevent theft</p>
+        </article>
+        <article class="competitor-card">
+          <div class="competitor-media" style="background-image: url('amazon.png')" role="img" aria-label="Amazon Hub Locker"></div>
+          <h3>Amazon Hub Locker</h3>
+          <p class="competitor-desc"><strong>Function:</strong> Packages are delivered into a locker</p>
+          <p class="competitor-desc"><strong>Disadvantages:</strong> Size and weight limitations &middot; Only available for apartments</p>
+        </article>
+        <article class="competitor-card">
+          <div class="competitor-media" style="background-image: url('yale.png')" role="img" aria-label="Yale Smart Delivery Lock"></div>
+          <h3>Yale Smart Delivery Lock</h3>
+          <p class="competitor-desc"><strong>Function:</strong> Secures packages by automatically locking after delivery</p>
+          <p class="competitor-desc"><strong>Disadvantages:</strong> Expensive ($280&ndash;330) &middot; Deliverers are reluctant to use it &middot; Size limitations &middot; No sensors &rarr; can cause locking/security malfunctions</p>
+        </article>
+      </div>
+
+      <figure class="theft-visual">
+        <div class="theft-media" style="background-image: url('theft.png')" role="img" aria-label="Package theft illustration"></div>
+        <figcaption class="theft-caption">Exposed packages are vulnerable to theft&mdash;porches and doorsteps are easy targets when deliveries are left unattended.</figcaption>
+      </figure>
     </section>
 
     <section class="subpage-section solution-concepts">
-      <h2 class="section-heading">Solution Concepts</h2>
-
-      <div class="concept-grid" aria-label="Solution concepts">
+      <h2 class="section-heading">Potential Solutions</h2>
+      <div class="concept-grid" aria-label="Potential solution concepts">
         <article class="concept-card">
           <div class="concept-media" style="background-image: url('barlock.png')" role="img" aria-label="BarLock concept"></div>
           <h3>BarLock</h3>
-
-          <p class="concept-row">
-            <strong>Components:</strong> Barcode scanner &middot; Solenoid &middot; LCD screen
-          </p>
-          <p class="concept-row">
-            <strong>How it works:</strong> Barcode is mounted to the wall. Scanner reads package barcode &rarr; unlocks box temporarily. Deliverer places package inside. LCD provides instructions.
-          </p>
+          <p class="concept-row"><strong>Components:</strong> Barcode scanner &middot; Solenoid &middot; LCD screen</p>
+          <p class="concept-row"><strong>How it works:</strong> Barcode is mounted to the wall. Scanner reads package barcode &rarr; unlocks box temporarily. Deliverer places package inside. LCD provides instructions.</p>
         </article>
-
         <article class="concept-card">
           <div class="concept-media" style="background-image: url('keylock.png')" role="img" aria-label="KeyLock concept"></div>
           <h3>KeyLock</h3>
-
-          <p class="concept-row">
-            <strong>Components:</strong> Keypad &middot; LCD screen &middot; Solenoid
-          </p>
-          <p class="concept-row">
-            <strong>How it works:</strong> Box starts unlocked. Deliverer places package and enters code to lock it. Owner uses same code to unlock and retrieve package. LCD provides instructions.
-          </p>
+          <p class="concept-row"><strong>Components:</strong> Keypad &middot; LCD screen &middot; Solenoid</p>
+          <p class="concept-row"><strong>How it works:</strong> Box starts unlocked. Deliverer places package and enters code to lock it. Owner uses same code to unlock and retrieve package. LCD provides instructions.</p>
         </article>
-
         <article class="concept-card">
-          <div class="concept-media" style="background-image: url('parcel.png')" role="img" aria-label="Dropix concept"></div>
-          <h3>Dropix (Final Solution)</h3>
-
-          <p class="concept-row">
-            <strong>Components:</strong> Solenoid &middot; Weight sensor &middot; Fingerprint sensor &middot; LCD screen
-          </p>
-          <p class="concept-row">
-            <strong>How it works:</strong> Box remains unlocked when empty. Package is placed inside &rarr; weight sensor triggers automatic lock. Owner unlocks using fingerprint. Removing package resets system to unlocked state. LCD provides instructions.
-          </p>
+          <div class="concept-media" style="background-image: url('parcel.png')" role="img" aria-label="ParcelGuard concept"></div>
+          <h3>ParcelGuard</h3>
+          <p class="concept-row"><strong>Components:</strong> Solenoid &middot; Weight sensor &middot; Fingerprint sensor &middot; LCD screen</p>
+          <p class="concept-row"><strong>How it works:</strong> Box remains unlocked when empty. Package is placed inside &rarr; weight sensor triggers automatic lock. Owner unlocks using fingerprint. Removing package resets system to unlocked state. LCD provides instructions.</p>
         </article>
       </div>
     </section>
 
     <section class="landing-solution-strip strip-highlight">
-      <h2 class="strip-title">Chosen Solution</h2>
-      <p class="strip-lead"><strong>Dropix</strong> — a secure, automatic package box that locks itself when a package is placed inside.</p>
+      <h2 class="strip-title">Chosen Design</h2>
+      <p class="strip-lead"><strong>ParcelGuard</strong> is our final solution: a secure drop box that locks automatically when a package is detected, with fingerprint access for the owner—meeting our highest-weighted design goals without depending on carrier behavior.</p>
     </section>
 
-    <section class="subpage-section">
-      <h2 class="section-heading">Why This Solution Was Selected</h2>
+    <section class="subpage-section matrix-section">
+      <h2 class="section-heading">Decision Matrix</h2>
+      <p class="matrix-legend">Scoring: <strong>High</strong> = 3 &middot; <strong>Medium</strong> = 2 &middot; <strong>Low</strong> = 1 &middot; <strong>Not at all</strong> = 0</p>
+      <div class="matrix-scroll">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th scope="col">Requirement</th>
+              <th scope="col">Importance</th>
+              <th scope="col">Impact</th>
+              <th scope="col">Feasibility</th>
+              <th scope="col">Total</th>
+              <th scope="col">Essential / Non-Essential</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Solution must be cost-effective for the homeowner</strong>
+                <ul class="matrix-bullets">
+                  <li>$60&ndash;120 because the average package stolen costs over a hundred dollars</li>
+                  <li>Easy to make/manufacture/not too complicated</li>
+                  <li>Different versions ranging from cheap to expensive</li>
+                </ul>
+              </td>
+              <td>3</td><td>3</td><td>2</td><td>8</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The device must physically secure the package to the household to prevent easy theft</strong>
+                <ul class="matrix-bullets">
+                  <li>Device locks the package to the unit</li>
+                  <li>Device securely mounted to porch/front door</li>
+                  <li>Mechanism withstands a pull force of 50 lbs</li>
+                </ul>
+              </td>
+              <td>3</td><td>2</td><td>2</td><td>7</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The solution must be weather-resistant (waterproof and UV stable)</strong>
+                <ul class="matrix-bullets">
+                  <li>Water-resistant materials or design</li>
+                  <li>Temperature resistant</li>
+                  <li>UV-stable components to prevent cracking or discoloration</li>
+                </ul>
+              </td>
+              <td>2</td><td>3</td><td>1</td><td>6</td><td>Essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The system must be powered by a sustainable source</strong>
+                <ul class="matrix-bullets">
+                  <li>Solar powered</li>
+                  <li>Wind powered</li>
+                  <li>Low-power features</li>
+                </ul>
+              </td>
+              <td>2</td><td>2</td><td>1</td><td>5</td><td>Non-essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Easy to access for delivery drivers/companies</strong>
+                <ul class="matrix-bullets">
+                  <li>One-touch lock and release for authorized delivery personnel</li>
+                  <li>Accommodated through a delivery company app</li>
+                  <li>Clear, simple instructions visible for deliverers</li>
+                </ul>
+              </td>
+              <td>2</td><td>2</td><td>1</td><td>5</td><td>Non-essential</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>The system should connect to a person&rsquo;s phone for accessibility purposes</strong>
+                <ul class="matrix-bullets">
+                  <li>App notifications if a package is stolen or status changes</li>
+                  <li>Lock/access features through a mobile device</li>
+                  <li>Live camera view or history of package status on phone</li>
+                </ul>
+              </td>
+              <td>1</td><td>2</td><td>1</td><td>4</td><td>Non-essential</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="subpage-section competitive-advantage">
+      <h2 class="section-heading">Competitive Advantage</h2>
+      <p class="section-lead">Why ParcelGuard stands apart from doorbell cameras, lockers, and smart locks.</p>
       <ul class="compact-list">
-        <li>Automatically locks when a package is detected</li>
-        <li>Does not require the delivery driver to manually secure the box</li>
-        <li>Prevents theft rather than just recording it</li>
-        <li>Designed to be affordable, easy to use, and accessible for homes and apartments</li>
-        <li>Survey results showed users wanted the solution near their front door or porch</li>
+        <li><strong>Automatic locking via weight sensor</strong> &mdash; secures the package as soon as it is placed inside, without extra driver steps</li>
+        <li><strong>No reliance on delivery driver behavior</strong> &mdash; unlike keypad or app-dependent flows carriers may skip or misuse</li>
+        <li><strong>Secure fingerprint access</strong> &mdash; only the owner unlocks to retrieve; no shared codes left on packages</li>
+        <li><strong>More reliable than competitors</strong> &mdash; physical enclosure plus detection beats record-only cameras and avoids locker size or apartment-only limits</li>
       </ul>
     </section>
   </main>
