@@ -545,8 +545,12 @@ main {
 
 .stat-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  object-position: center;
+  margin-left: auto;
+  margin-right: auto;
   background: rgba(121, 184, 169, 0.15);
 }
 
@@ -1520,15 +1524,9 @@ p {
     padding: 1.35rem 1.25rem;
   }
 
-  .stat-image {
-    height: 160px;
-  }
-
   .matrix-table {
     min-width: 640px;
     font-size: 0.85rem;
   }
 }
-
-
 
