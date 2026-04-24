@@ -657,6 +657,17 @@ main {
   margin-bottom: 0.25rem;
 }
 
+/* Ideate: Decision Matrix worksheet image */
+.decision-matrix-image {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 24px auto 0;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
 /* Team: structured profiles */
 .profile-grid {
   display: grid;
