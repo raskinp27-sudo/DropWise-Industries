@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropWise Industries | Dropix – The safer way to receive</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -28,7 +29,53 @@
   </header>
 
   <main class="landing-main">
-    <section class="hero landing-hero">
+    <section class="dropix-demo-section dropix-demo-section--top reveal-scale" aria-labelledby="demo-heading">
+      <div class="landing-section-shell">
+        <h2 class="section-heading" id="demo-heading">See how Dropix works</h2>
+        <p class="demo-lead">
+          Starts locked. Press <strong>Start demo</strong> or activate the box to watch unlock, delivery, secure close, and lock—just like the real receiving flow.
+        </p>
+        <div class="dropix-demo-wrap">
+          <div class="dropix-demo-stage">
+            <div
+              class="dropix-demo-hit"
+              id="dropixDemoHit"
+              tabindex="0"
+              role="button"
+              aria-label="Run Dropix demonstration"
+              aria-controls="dropixDemoRoot"
+            >
+              <div
+                id="dropixDemoRoot"
+                class="dropix-demo-perspective dd-locked dd-lid-closed dd-pkg-out"
+              >
+                <div class="dropix-demo-box">
+                  <div class="dropix-demo-lid" aria-hidden="true"></div>
+                  <div class="dropix-demo-body">
+                    <div class="dropix-demo-package" aria-hidden="true">
+                      <span class="dropix-demo-package-tape"></span>
+                    </div>
+                  </div>
+                  <div class="dropix-demo-lock-strip" aria-hidden="true">
+                    <span class="dropix-demo-shackle"></span>
+                    <span class="dropix-demo-lock-body"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="dropix-demo-status" id="dropixDemoStatus" aria-live="polite" aria-atomic="true">Locked</p>
+            <p class="dropix-demo-hint">Click the box or use the button below</p>
+          </div>
+          <div class="dropix-demo-controls">
+            <button type="button" class="dropix-demo-btn dropix-demo-btn-primary" id="dropixDemoStart">
+              Start demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero landing-hero reveal-scale">
       <div class="hero-content">
         <img src="logo.png" alt="DropWise Industries logo" class="hero-logo" />
         <h1 class="hero-title">Dropix</h1>
@@ -38,108 +85,95 @@
       </div>
     </section>
 
-    <section class="landing-intro">
-      <p class="intro-label">Abstract</p>
-      <p class="intro-text">
-        Dropix is a secure, autonomous package drop box designed to prevent porch piracy. Millions of packages are stolen each year due to exposed delivery locations, costing Americans billions of dollars annually and disrupting access to essential items like medication, groceries, and work supplies. Dropix solves this problem by providing a protected container that delivery drivers place packages into, which automatically secures deliveries and prevents theft. The system is designed to be affordable, easy to use, and compatible with homes and apartments, ensuring packages remain safe from the moment they are delivered until the owner retrieves them.
-      </p>
-    </section>
-
-    <section class="landing-solution-strip">
-      <h2 class="strip-title">The Solution</h2>
-      <p class="strip-lead">Dropix uses a protected drop box that secures itself the moment a package is placed inside — automatically, with no extra steps for the driver.</p>
-      <ul class="solution-list">
-        <li><span class="check" aria-hidden="true">✓</span> <strong>Protected container</strong> — Drivers place packages inside; no porch exposure.</li>
-        <li><span class="check" aria-hidden="true">✓</span> <strong>Automatic securing</strong> — Locks when a package is detected; no manual action.</li>
-        <li><span class="check" aria-hidden="true">✓</span> <strong>Prevents theft</strong> — Stops porch piracy instead of only recording it.</li>
-        <li><span class="check" aria-hidden="true">✓</span> <strong>Affordable &amp; easy</strong> — Designed for homes and apartments, simple to use.</li>
-      </ul>
-    </section>
-
-    <section class="dropix-demo-section" aria-labelledby="demo-heading">
-      <h2 class="section-heading" id="demo-heading">Interactive demo</h2>
-      <p class="demo-lead">
-        Tap lock or unlock to see how Dropix secures a package inside the box—with smooth motion and clear status.
-      </p>
-      <div class="dropix-demo-wrap">
-        <div class="dropix-demo-stage" aria-live="polite">
-          <div
-            class="dropix-demo-perspective"
-            id="dropixDemoBox"
-            role="img"
-            aria-label="Dropix drop box containing a package, currently unlocked"
-          >
-            <div class="dropix-demo-box">
-              <div class="dropix-demo-lid" aria-hidden="true"></div>
-              <div class="dropix-demo-body">
-                <div class="dropix-demo-package" aria-hidden="true">
-                  <span class="dropix-demo-package-tape"></span>
-                </div>
-              </div>
-              <div class="dropix-demo-lock-strip" aria-hidden="true">
-                <span class="dropix-demo-shackle"></span>
-                <span class="dropix-demo-lock-body"></span>
-              </div>
-            </div>
-          </div>
-          <p class="dropix-demo-status" id="dropixDemoStatus">Status: unlocked — compartment open</p>
+    <section class="landing-intro reveal">
+      <div class="landing-section-shell">
+        <div class="content-card content-card--abstract">
+          <p class="intro-label">Abstract</p>
+          <p class="intro-text">
+            Dropix is a secure, autonomous package drop box designed to prevent porch piracy. Millions of packages are stolen each year due to exposed delivery locations, costing Americans billions of dollars annually and disrupting access to essential items like medication, groceries, and work supplies. Dropix solves this problem by providing a protected container that delivery drivers place packages into, which automatically secures deliveries and prevents theft. The system is designed to be affordable, easy to use, and compatible with homes and apartments, ensuring packages remain safe from the moment they are delivered until the owner retrieves them.
+          </p>
         </div>
-        <div class="dropix-demo-controls">
-          <button type="button" class="dropix-demo-btn" id="dropixDemoUnlock" aria-controls="dropixDemoBox">Unlock</button>
-          <button type="button" class="dropix-demo-btn dropix-demo-btn-primary" id="dropixDemoLock" aria-controls="dropixDemoBox">Lock</button>
+      </div>
+    </section>
+
+    <section class="landing-solution-strip reveal">
+      <div class="landing-section-shell">
+        <div class="content-card content-card--flush">
+          <h2 class="strip-title">The Solution</h2>
+          <p class="strip-lead">Dropix uses a protected drop box that secures itself the moment a package is placed inside — automatically, with no extra steps for the driver.</p>
+          <ul class="solution-list">
+            <li><span class="check" aria-hidden="true">✓</span> <strong>Protected container</strong> — Drivers place packages inside; no porch exposure.</li>
+            <li><span class="check" aria-hidden="true">✓</span> <strong>Automatic securing</strong> — Locks when a package is detected; no manual action.</li>
+            <li><span class="check" aria-hidden="true">✓</span> <strong>Prevents theft</strong> — Stops porch piracy instead of only recording it.</li>
+            <li><span class="check" aria-hidden="true">✓</span> <strong>Affordable &amp; easy</strong> — Designed for homes and apartments, simple to use.</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="landing-story">
-      <div class="story-block story-block-1">
-        <div class="story-media">
-          <img src="https://images.pexels.com/photos/4246110/pexels-photo-4246110.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Delivery driver placing a package at a doorstep" />
-        </div>
-        <div class="story-text">
-          <h3>Everyday Package Delivery</h3>
-          <p>Packages arrive at exposed porches and doorsteps every day. Dropix fits into the journey from truck to doorstep by giving drivers a secure place to leave deliveries.</p>
-        </div>
+      <div class="story-block story-block-1 reveal-left">
+        <article class="story-card content-card">
+          <div class="story-card-inner">
+            <div class="story-media">
+              <img src="https://images.pexels.com/photos/4246110/pexels-photo-4246110.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Delivery driver placing a package at a doorstep" />
+            </div>
+            <div class="story-text">
+              <h3>Everyday Package Delivery</h3>
+              <p>Packages arrive at exposed porches and doorsteps every day. Dropix fits into the journey from truck to doorstep by giving drivers a secure place to leave deliveries.</p>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="story-block story-block-2">
-        <div class="story-media">
-          <img src="56.png" alt="Person watching a package at a doorway to prevent theft" />
-        </div>
-        <div class="story-text">
-          <h3>Preventing Package Theft</h3>
-          <p>Porch piracy turns deliveries into easy targets. Dropix creates a safer, controlled handoff so packages are protected the moment they're dropped off.</p>
-        </div>
+      <div class="story-block story-block-2 reveal-right">
+        <article class="story-card content-card">
+          <div class="story-card-inner">
+            <div class="story-media">
+              <img src="56.png" alt="Person watching a package at a doorway to prevent theft" />
+            </div>
+            <div class="story-text">
+              <h3>Preventing Package Theft</h3>
+              <p>Porch piracy turns deliveries into easy targets. Dropix creates a safer, controlled handoff so packages are protected the moment they're dropped off.</p>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="story-block story-block-3">
-        <div class="story-media">
-          <img src="https://images.pexels.com/photos/8566478/pexels-photo-8566478.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Secure parcel locker boxes used for safe deliveries" />
-        </div>
-        <div class="story-text">
-          <h3>Secure Drop Boxes</h3>
-          <p>Dropix acts as a secure drop box that locks automatically when a package is placed inside, keeping items safe until you retrieve them.</p>
-        </div>
+      <div class="story-block story-block-3 reveal-left">
+        <article class="story-card content-card">
+          <div class="story-card-inner">
+            <div class="story-media">
+              <img src="https://images.pexels.com/photos/8566478/pexels-photo-8566478.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Secure parcel locker boxes used for safe deliveries" />
+            </div>
+            <div class="story-text">
+              <h3>Secure Drop Boxes</h3>
+              <p>Dropix acts as a secure drop box that locks automatically when a package is placed inside, keeping items safe until you retrieve them.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="landing-features">
-      <h2 class="section-heading">Key Features</h2>
+      <div class="landing-section-shell landing-section-shell--wide reveal">
+        <h2 class="section-heading">Key Features</h2>
+      </div>
       <div class="feature-grid">
-        <article class="feature-card">
+        <article class="feature-card reveal-scale">
           <span class="feature-icon" aria-hidden="true">📦</span>
           <h3>Secure Drop-Off</h3>
           <p>Drivers place packages inside a protected container — no more left-on-step exposure.</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card reveal-scale">
           <span class="feature-icon" aria-hidden="true">🔒</span>
           <h3>Auto-Lock on Delivery</h3>
           <p>Detects when a package is placed and secures it automatically; no keys or codes for the driver.</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card reveal-scale">
           <span class="feature-icon" aria-hidden="true">🏠</span>
           <h3>Homes &amp; Apartments</h3>
           <p>Designed to be affordable and easy to set up wherever you receive packages.</p>
         </article>
-        <article class="feature-card">
+        <article class="feature-card reveal-scale">
           <span class="feature-icon" aria-hidden="true">✓</span>
           <h3>Safe Until You Retrieve</h3>
           <p>Packages stay protected from the moment they're delivered until you take them out.</p>
@@ -148,22 +182,24 @@
     </section>
 
     <section class="landing-impact">
-      <h2 class="section-heading">Innovation &amp; Impact</h2>
-      <p class="impact-tagline">Built for accessibility, simplicity, and real-world use.</p>
+      <div class="landing-section-shell impact-head reveal">
+        <h2 class="section-heading">Innovation &amp; Impact</h2>
+        <p class="impact-tagline">Built for accessibility, simplicity, and real-world use.</p>
+      </div>
       <div class="impact-grid">
-        <div class="impact-pillar">
+        <div class="impact-pillar reveal">
           <strong>Affordable</strong>
           <p>Low-cost design so more people can secure their deliveries.</p>
         </div>
-        <div class="impact-pillar">
+        <div class="impact-pillar reveal">
           <strong>Easy to use</strong>
           <p>No complex setup; drivers drop in, you take out when ready.</p>
         </div>
-        <div class="impact-pillar">
+        <div class="impact-pillar reveal">
           <strong>Homes &amp; apartments</strong>
           <p>Compatible with porches, doorways, and common areas.</p>
         </div>
-        <div class="impact-pillar">
+        <div class="impact-pillar reveal">
           <strong>Prevents theft</strong>
           <p>Stops porch piracy instead of only recording it.</p>
         </div>
@@ -171,9 +207,9 @@
     </section>
 
     <section class="landing-explore">
-      <h2 class="section-heading">Explore the Project</h2>
-      <p class="explore-tagline">Follow our engineering journey — from problem to solution to testing.</p>
-      <nav class="explore-links" aria-label="Project pages">
+      <h2 class="section-heading reveal">Explore the Project</h2>
+      <p class="explore-tagline reveal">Follow our engineering journey — from problem to solution to testing.</p>
+      <nav class="explore-links reveal" aria-label="Project pages">
         <a href="background-research-problem-definition.html" class="explore-item"><span class="explore-num">01</span> Background Research &amp; Problem Definition <span class="explore-arrow">→</span></a>
         <a href="ideate-solution.html" class="explore-item"><span class="explore-num">02</span> Ideate Solution <span class="explore-arrow">→</span></a>
         <a href="final-engineering-design.html" class="explore-item"><span class="explore-num">03</span> Final Engineering Design <span class="explore-arrow">→</span></a>
@@ -186,45 +222,6 @@
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    (function () {
-      var box = document.getElementById('dropixDemoBox');
-      var statusEl = document.getElementById('dropixDemoStatus');
-      var btnLock = document.getElementById('dropixDemoLock');
-      var btnUnlock = document.getElementById('dropixDemoUnlock');
-      if (!box || !statusEl || !btnLock || !btnUnlock) return;
-
-      var locked = false;
-
-      function render() {
-        box.classList.toggle('is-locked', locked);
-        box.setAttribute(
-          'aria-label',
-          locked
-            ? 'Dropix drop box containing a package, locked and secured'
-            : 'Dropix drop box containing a package, currently unlocked'
-        );
-        statusEl.textContent = locked
-          ? 'Status: locked — package secured inside'
-          : 'Status: unlocked — compartment open';
-        btnLock.disabled = locked;
-        btnUnlock.disabled = !locked;
-      }
-
-      btnLock.addEventListener('click', function () {
-        locked = true;
-        render();
-      });
-      btnUnlock.addEventListener('click', function () {
-        locked = false;
-        render();
-      });
-      render();
-    })();
-  </script>
 </body>
 </html>
 
