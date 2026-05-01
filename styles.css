@@ -20,6 +20,55 @@
   --font-body: 'Josefin Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* Scroll-triggered reveals (IntersectionObserver in site.js adds .is-revealed) */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  transition:
+    opacity 0.68s ease,
+    transform 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal {
+  transform: translateY(40px);
+}
+
+.reveal-left {
+  transform: translate3d(-36px, 32px, 0);
+}
+
+.reveal-right {
+  transform: translate3d(36px, 32px, 0);
+}
+
+.reveal-scale {
+  transform: translateY(32px) scale(0.96);
+}
+
+.reveal.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-scale.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -115,12 +164,49 @@ main {
   margin-bottom: 1rem;
 }
 
+.content-card,
 .research-panel {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(0, 109, 119, 0.14);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(0, 109, 119, 0.12);
   border-radius: 18px;
-  padding: 1.6rem 1.85rem;
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.06);
+  padding: 1.65rem 1.85rem;
+  box-shadow:
+    0 14px 42px rgba(0, 0, 0, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.content-card--flush {
+  padding: 1.5rem 1.6rem;
+}
+
+.content-card--abstract {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-card .strip-title {
+  margin-top: 0;
+}
+
+.landing-section-shell {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+.landing-section-shell--wide {
+  max-width: 1120px;
+}
+
+.landing-impact .impact-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.landing-impact .impact-head .section-heading {
+  margin-bottom: 0.5rem;
 }
 
 .research-panel .intro-text.thesis:last-child {
@@ -202,9 +288,12 @@ main {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   padding: 1.75rem 2rem;
-  background: linear-gradient(135deg, rgba(121, 184, 169, 0.1), rgba(184, 192, 255, 0.06));
-  border-radius: 16px;
-  border: 1px solid rgba(0, 109, 119, 0.12);
+  background: linear-gradient(135deg, rgba(121, 184, 169, 0.12), rgba(184, 192, 255, 0.08));
+  border-radius: 18px;
+  border: 1px solid rgba(0, 109, 119, 0.14);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset;
 }
 
 @media (min-width: 768px) {
@@ -1011,11 +1100,11 @@ main {
 }
 
 
-/* Landing: intro (abstract) – no big box */
+/* Landing: intro (abstract wrapper; card sized via .content-card--abstract) */
 .landing-intro {
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto 4rem;
-  padding: 0 1.5rem;
+  padding: 0;
 }
 
 .intro-label {
@@ -1091,20 +1180,25 @@ main {
   flex-shrink: 0;
 }
 
-/* Landing: interactive Dropix box demo */
+/* Landing: Dropix animated demo (state classes: dd-locked, dd-lid-open, dd-pkg-in, …) */
 .dropix-demo-section {
   max-width: 920px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3.25rem;
   padding: 0 1.5rem;
 }
 
+.dropix-demo-section--top {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
 .dropix-demo-section .section-heading {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .demo-lead {
-  max-width: 520px;
-  margin: 0 auto 1.75rem;
+  max-width: 540px;
+  margin: 0 auto 1.5rem;
   text-align: center;
   font-size: 1rem;
   line-height: 1.65;
@@ -1115,12 +1209,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem 1.5rem 2.25rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 247, 0.75));
+  gap: 1.35rem;
+  padding: 2rem 1.5rem 2.15rem;
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 20px;
   border: 1px solid rgba(0, 109, 119, 0.12);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.95) inset;
 }
 
 .dropix-demo-stage {
@@ -1128,6 +1224,33 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+}
+
+.dropix-demo-hit {
+  display: flex;
+  justify-content: center;
+  padding: 0.85rem;
+  margin: -0.85rem;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropix-demo-hit:hover .dropix-demo-box {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 22px 44px rgba(0, 109, 119, 0.22);
+}
+
+.dropix-demo-hit:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 109, 119, 0.35);
+  border-radius: 20px;
+}
+
+.dropix-demo-hit[aria-disabled='true'] {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .dropix-demo-perspective {
@@ -1145,6 +1268,7 @@ main {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.6),
     0 18px 36px rgba(0, 109, 119, 0.18);
+  transition: box-shadow 0.25s ease;
 }
 
 .dropix-demo-lid {
@@ -1156,14 +1280,17 @@ main {
   background: linear-gradient(180deg, #3d4a4a 0%, #1e2a2a 100%);
   border-radius: 10px 10px 6px 6px;
   transform-origin: 50% 0;
-  transform: rotateX(-56deg);
-  transition: transform 0.55s cubic-bezier(0.33, 1.15, 0.53, 1);
+  transition: transform 0.58s cubic-bezier(0.33, 1.15, 0.53, 1);
   z-index: 3;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 
-.dropix-demo-perspective.is-locked .dropix-demo-lid {
+.dd-lid-closed .dropix-demo-lid {
   transform: rotateX(0deg);
+}
+
+.dd-lid-open .dropix-demo-lid {
+  transform: rotateX(-58deg);
 }
 
 .dropix-demo-body {
@@ -1175,19 +1302,35 @@ main {
   border-radius: 0 0 10px 10px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.02));
   z-index: 1;
+  overflow: visible;
 }
 
 .dropix-demo-package {
   position: absolute;
   left: 50%;
   bottom: 12px;
-  transform: translateX(-50%);
   width: 78px;
   height: 52px;
   background: linear-gradient(135deg, #c4a574, #8b6f47);
   border-radius: 6px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
   z-index: 2;
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+  transition:
+    transform 0.65s cubic-bezier(0.28, 0.82, 0.36, 1),
+    opacity 0.35s ease;
+}
+
+.dd-pkg-out .dropix-demo-package {
+  opacity: 0;
+  transform: translate3d(-50%, -160%, 0) scale(0.92);
+  pointer-events: none;
+}
+
+.dd-pkg-in .dropix-demo-package {
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0) scale(1);
 }
 
 .dropix-demo-package-tape {
@@ -1203,13 +1346,14 @@ main {
 
 .dropix-demo-lock-strip {
   position: absolute;
-  right: 16px;
+  right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 4;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 }
 
 .dropix-demo-shackle {
@@ -1220,7 +1364,9 @@ main {
   border-bottom: none;
   border-radius: 12px 12px 0 0;
   margin-bottom: -2px;
-  transition: border-color 0.35s ease, transform 0.45s cubic-bezier(0.33, 1.15, 0.53, 1);
+  transition:
+    border-color 0.35s ease,
+    transform 0.48s cubic-bezier(0.33, 1.15, 0.53, 1);
   transform-origin: 50% 100%;
 }
 
@@ -1234,18 +1380,23 @@ main {
   transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
-.dropix-demo-perspective.is-locked .dropix-demo-shackle {
+.dd-locked .dropix-demo-shackle {
   border-color: var(--color-primary);
   transform: translateY(1px);
 }
 
-.dropix-demo-perspective.is-locked .dropix-demo-lock-body {
+.dd-locked .dropix-demo-lock-body {
   background: linear-gradient(180deg, #0d9488, var(--color-primary));
   box-shadow: 0 0 0 2px rgba(0, 109, 119, 0.22);
 }
 
-.dropix-demo-perspective:not(.is-locked) .dropix-demo-shackle {
-  transform: translateY(-5px) rotate(-14deg);
+.dd-unlocked .dropix-demo-shackle {
+  border-color: #6b7280;
+  transform: translateY(-5px) rotate(-15deg);
+}
+
+.dd-unlocked .dropix-demo-lock-body {
+  background: linear-gradient(180deg, #9ca3af, #707a85);
 }
 
 .dropix-demo-status {
@@ -1253,6 +1404,15 @@ main {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-dark);
+  min-height: 1.35em;
+  text-align: center;
+}
+
+.dropix-demo-hint {
+  margin: -0.25rem 0 0;
+  font-size: 0.82rem;
+  color: #5c6678;
+  text-align: center;
 }
 
 .dropix-demo-controls {
@@ -1264,8 +1424,8 @@ main {
 
 .dropix-demo-btn {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  padding: 0.65rem 1.35rem;
+  font-size: 0.97rem;
+  padding: 0.72rem 1.6rem;
   border-radius: 999px;
   border: 2px solid rgba(0, 109, 119, 0.35);
   background: #fff;
@@ -1302,12 +1462,13 @@ main {
 
 @media (prefers-reduced-motion: reduce) {
   .dropix-demo-lid,
-  .dropix-demo-shackle {
+  .dropix-demo-shackle,
+  .dropix-demo-package {
     transition: none;
   }
 }
 
-/* Landing: story blocks (image + text, alternating) */
+/* Landing: story blocks (image + text inside content cards, alternating layout) */
 .landing-story {
   max-width: 1100px;
   margin: 0 auto 4rem;
@@ -1315,21 +1476,35 @@ main {
 }
 
 .story-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .story-block:last-child {
   margin-bottom: 0;
 }
 
+.story-card {
+  padding: 1.35rem 1.35rem;
+  margin: 0;
+}
+
+@media (min-width: 540px) {
+  .story-card {
+    padding: 1.5rem 1.65rem;
+  }
+}
+
+.story-card-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+  align-items: center;
+}
+
 .story-media {
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
 }
 
 .story-media img {
@@ -1340,7 +1515,7 @@ main {
 
 .story-text h3 {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: var(--color-dark);
   margin: 0 0 0.5rem;
 }
@@ -1352,13 +1527,15 @@ main {
 }
 
 @media (min-width: 700px) {
-  .story-block-1,
-  .story-block-3 {
+  .story-block-1 .story-card-inner,
+  .story-block-3 .story-card-inner {
     grid-template-columns: 1fr 1fr;
+    gap: 1.65rem;
   }
 
-  .story-block-2 {
+  .story-block-2 .story-card-inner {
     grid-template-columns: 1fr 1fr;
+    gap: 1.65rem;
   }
 
   .story-block-2 .story-media {
@@ -1450,10 +1627,11 @@ main {
 }
 
 .impact-pillar {
-  padding: 1.25rem 1.25rem 1.5rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 109, 119, 0.1);
+  padding: 1.35rem 1.45rem 1.55rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 109, 119, 0.11);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
 }
 
 .impact-pillar strong {
@@ -1833,4 +2011,3 @@ p {
     font-size: 0.85rem;
   }
 }
-
