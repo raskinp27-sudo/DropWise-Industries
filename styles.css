@@ -111,14 +111,98 @@ main {
 }
 
 .landing-main .hero {
-  max-width: 1100px;
-  margin: 2.5rem 1.5rem 3.5rem;
+  max-width: 1200px;
+  margin: 0.65rem auto 3.25rem;
+}
+
+.landing-main .landing-hero.hero--split {
+  padding: 0;
 }
 
 @media (min-width: 1140px) {
   .landing-main .hero {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.hero-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+}
+
+.hero-demo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-demo-heading.section-heading {
+  font-size: clamp(1.35rem, 2.8vw, 1.72rem);
+  margin: 0 0 0.35rem;
+  text-align: center;
+}
+
+.hero-demo-lead.demo-lead {
+  margin: 0 0 1.1rem;
+  max-width: 26rem;
+}
+
+.hero-demo .dropix-demo-wrap {
+  width: 100%;
+  max-width: 360px;
+  padding: 1.35rem 1.25rem 1.45rem;
+}
+
+.hero-demo .dropix-demo-perspective {
+  transform: scale(0.9);
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-demo {
+    margin-top: 30px;
+  }
+
+  .hero-text {
+    max-width: none;
+  }
+
+  .hero-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-logo {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .hero-scroll {
+    text-align: center;
+  }
+
+  .hero-demo .dropix-demo-perspective {
+    transform: scale(0.88);
   }
 }
 
@@ -1069,6 +1153,11 @@ main {
   max-width: 640px;
 }
 
+/* Homepage hero uses .hero-container + .hero-text instead */
+.landing-main .landing-hero .hero-text {
+  min-width: 0;
+}
+
 .hero-logo {
   width: 128px;
   height: auto;
@@ -1079,10 +1168,14 @@ main {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  font-size: clamp(2.95rem, 5.5vw, 4.1rem);
   margin: 0 0 0.5rem;
   color: var(--color-dark);
   letter-spacing: -0.02em;
+}
+
+.landing-main .landing-hero .hero-logo {
+  margin-top: 0;
 }
 
 .hero-slogan {
@@ -1941,14 +2034,26 @@ p {
     padding-inline: 1.1rem;
   }
 
-  .hero {
+  .hero:not(.hero--split) {
     padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .hero-container {
+    padding: 40px 16px;
+    gap: 28px;
+  }
+
+  .hero {
     margin-bottom: 2.5rem;
   }
 
   .landing-main .hero {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .landing-main .hero.hero--split {
+    margin-top: 0.35rem;
   }
 
   .abstract,
