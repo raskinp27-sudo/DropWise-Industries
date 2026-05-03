@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropWise Industries | Final Engineering Design</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -28,35 +29,71 @@
   </header>
 
   <main class="landing-main subpage-main">
-    <section class="subpage-hero">
-      <div class="subpage-section">
-        <h1 class="subpage-title">Final Engineering Design</h1>
-        <p class="subpage-intro">Present the final Dropix design, including how it works, how it is built, and how it keeps receiving safer.</p>
+    <section class="engineering-section">
+      <h1 class="subpage-title engineering-heading reveal-scale">Final Engineering Design</h1>
+      <p class="engineering-lead reveal">Present the final Dropix design, including how it works, how it is built, and how it keeps receiving safer.</p>
+
+      <div class="engineering-grid">
+        <div class="engineering-card reveal">
+          <h2>Video of Working Prototype</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>System Block Diagram</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card engineering-card--media reveal">
+          <h2>Bill of Materials with Costs</h2>
+          <div class="engineering-card-media">
+            <img src="cost.png" alt="Bill of Materials with Costs" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>Wiring Diagram</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card engineering-card--media reveal">
+          <h2>Programming Flowchart</h2>
+          <div class="engineering-card-media">
+            <img src="flow.png" alt="Programming Flowchart" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>CAD Model</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>CAD Drawings with Dimensions</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>Animation</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>Photo Rendering</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
+
+        <div class="engineering-card reveal">
+          <h2>Images of Various Design Iterations</h2>
+          <p>Placeholder &mdash; content coming soon.</p>
+        </div>
       </div>
     </section>
-
-    <div class="content-blocks">
-      <div class="content-block">
-        <h2>System Overview</h2>
-        <p>Describe the overall Dropix system here. Include diagrams or labeled sketches that show the main components and how they interact to protect packages and guide users through a safer receiving process.</p>
-      </div>
-      <div class="content-block">
-        <h2>Key Components &amp; Materials</h2>
-        <p>List and explain the important parts of your design. This might include sensors, locks, containers, signage, apps, or any physical structures and materials that make up Dropix.</p>
-      </div>
-      <div class="content-block">
-        <h2>How Dropix Works</h2>
-        <p>Walk through the step-by-step user experience: what the delivery person does, what the receiver does, and how Dropix keeps items safer at every step. Use clear, student-friendly language and visuals if available.</p>
-      </div>
-    </div>
   </main>
 
   <footer class="site-footer">
     <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
