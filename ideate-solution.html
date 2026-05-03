@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropWise Industries | Ideate Solution</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -30,15 +31,15 @@
   <main class="landing-main subpage-main">
     <section class="subpage-hero">
       <div class="subpage-section">
-        <h1 class="subpage-title">Ideate Solution</h1>
-        <p class="subpage-intro">From design goals and competitive landscape to three concrete concepts—ending with Dropix as our chosen direction.</p>
+        <h1 class="subpage-title reveal-scale">Ideate Solution</h1>
+        <p class="subpage-intro reveal">From design goals and competitive landscape to three concrete concepts—ending with Dropix as our chosen direction.</p>
       </div>
     </section>
 
     <section class="subpage-section matrix-section">
-      <h2 class="section-heading">Key Design Goals (Solution Requirements)</h2>
-      <p class="matrix-legend">Scoring: <strong>High</strong> = 3 &middot; <strong>Medium</strong> = 2 &middot; <strong>Low</strong> = 1 &middot; <strong>Not at all</strong> = 0</p>
-      <div class="matrix-scroll">
+      <h2 class="section-heading reveal-left">Key Design Goals (Solution Requirements)</h2>
+      <p class="matrix-legend reveal">Scoring: <strong>High</strong> = 3 &middot; <strong>Medium</strong> = 2 &middot; <strong>Low</strong> = 1 &middot; <strong>Not at all</strong> = 0</p>
+      <div class="matrix-scroll reveal-scale">
         <table class="matrix-table">
           <thead>
             <tr>
@@ -112,23 +113,23 @@
     </section>
 
     <section class="subpage-section existing-solutions">
-      <h2 class="section-heading">Competitors / Existing Solutions</h2>
-      <p class="section-lead">How today&rsquo;s alternatives work—and where they leave packages exposed.</p>
+      <h2 class="section-heading reveal-left">Competitors / Existing Solutions</h2>
+      <p class="section-lead reveal">How today&rsquo;s alternatives work—and where they leave packages exposed.</p>
 
       <div class="competitor-grid" aria-label="Competitor solutions">
-        <article class="competitor-card">
+        <article class="competitor-card reveal">
           <div class="competitor-media" style="background-image: url('ring.png')" role="img" aria-label="Ring Camera"></div>
           <h3>Ring Camera</h3>
           <p class="competitor-desc"><strong>Function:</strong> Records in real time the surroundings of a doorstep</p>
           <p class="competitor-desc"><strong>Disadvantages:</strong> Expensive ($60&ndash;300) &middot; Limited coverage with one camera &middot; Does not actively prevent theft</p>
         </article>
-        <article class="competitor-card">
+        <article class="competitor-card reveal">
           <div class="competitor-media" style="background-image: url('amazon.png')" role="img" aria-label="Amazon Hub Locker"></div>
           <h3>Amazon Hub Locker</h3>
           <p class="competitor-desc"><strong>Function:</strong> Packages are delivered into a locker</p>
           <p class="competitor-desc"><strong>Disadvantages:</strong> Size and weight limitations &middot; Only available for apartments</p>
         </article>
-        <article class="competitor-card">
+        <article class="competitor-card reveal">
           <div class="competitor-media" style="background-image: url('yale.png')" role="img" aria-label="Yale Smart Delivery Lock"></div>
           <h3>Yale Smart Delivery Lock</h3>
           <p class="competitor-desc"><strong>Function:</strong> Secures packages by automatically locking after delivery</p>
@@ -136,28 +137,28 @@
         </article>
       </div>
 
-      <figure class="theft-visual">
+      <figure class="theft-visual reveal-scale">
         <div class="theft-media" style="background-image: url('theft.png')" role="img" aria-label="Package theft illustration"></div>
         <figcaption class="theft-caption">Exposed packages are vulnerable to theft&mdash;porches and doorsteps are easy targets when deliveries are left unattended.</figcaption>
       </figure>
     </section>
 
     <section class="subpage-section solution-concepts">
-      <h2 class="section-heading">Potential Solutions</h2>
+      <h2 class="section-heading reveal-right">Potential Solutions</h2>
       <div class="concept-grid" aria-label="Potential solution concepts">
-        <article class="concept-card">
+        <article class="concept-card reveal">
           <div class="concept-media" style="background-image: url('barlock.png')" role="img" aria-label="BarLock concept"></div>
           <h3>BarLock</h3>
           <p class="concept-row"><strong>Components:</strong> Barcode scanner &middot; Solenoid &middot; LCD screen</p>
           <p class="concept-row"><strong>How it works:</strong> Barcode is mounted to the wall. Scanner reads package barcode &rarr; unlocks box temporarily. Deliverer places package inside. LCD provides instructions.</p>
         </article>
-        <article class="concept-card">
+        <article class="concept-card reveal">
           <div class="concept-media" style="background-image: url('keylock.png')" role="img" aria-label="KeyLock concept"></div>
           <h3>KeyLock</h3>
           <p class="concept-row"><strong>Components:</strong> Keypad &middot; LCD screen &middot; Solenoid</p>
           <p class="concept-row"><strong>How it works:</strong> Box starts unlocked. Deliverer places package and enters code to lock it. Owner uses same code to unlock and retrieve package. LCD provides instructions.</p>
         </article>
-        <article class="concept-card">
+        <article class="concept-card reveal">
           <div class="concept-media" style="background-image: url('parcel.png')" role="img" aria-label="Dropix concept"></div>
           <h3>Dropix</h3>
           <p class="concept-row"><strong>Components:</strong> Solenoid &middot; Weight sensor &middot; Fingerprint sensor &middot; LCD screen</p>
@@ -166,20 +167,20 @@
       </div>
     </section>
 
-    <section class="landing-solution-strip strip-highlight">
+    <section class="landing-solution-strip strip-highlight reveal-scale">
       <h2 class="strip-title">Chosen Design</h2>
       <p class="strip-lead"><strong>Dropix</strong> is our final solution: a secure drop box that locks automatically when a package is detected, with fingerprint access for the owner—meeting our highest-weighted design goals without depending on carrier behavior.</p>
     </section>
 
     <section class="subpage-section matrix-section">
-      <h2 class="section-heading">Decision Matrix</h2>
-      <img src="graph.png" alt="Decision Matrix worksheet for Dropix solution selection" class="decision-matrix-image" />
+      <h2 class="section-heading reveal-left">Decision Matrix</h2>
+      <img src="graph.png" alt="Decision Matrix worksheet for Dropix solution selection" class="decision-matrix-image reveal-scale" />
     </section>
 
     <section class="subpage-section competitive-advantage">
-      <h2 class="section-heading">Competitive Advantage</h2>
-      <p class="section-lead">Why Dropix stands apart from doorbell cameras, lockers, and smart locks.</p>
-      <ul class="compact-list">
+      <h2 class="section-heading reveal-right">Competitive Advantage</h2>
+      <p class="section-lead reveal">Why Dropix stands apart from doorbell cameras, lockers, and smart locks.</p>
+      <ul class="compact-list reveal">
         <li><strong>Automatic locking via weight sensor</strong> &mdash; Dropix secures the package as soon as it is placed inside, without extra driver steps</li>
         <li><strong>No reliance on delivery driver behavior</strong> &mdash; unlike keypad or app-dependent flows carriers may skip or misuse</li>
         <li><strong>Secure fingerprint access</strong> &mdash; only the owner unlocks to retrieve; no shared codes left on packages</li>
@@ -192,9 +193,6 @@
     <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
 
