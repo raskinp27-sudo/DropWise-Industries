@@ -516,13 +516,22 @@ main {
 }
 
 .engineering-card img {
-  display: block;
   width: 100%;
+  max-width: 500px;
   height: auto;
-  max-height: min(72vh, 920px);
-  margin: 0 auto;
-  border-radius: 14px;
+  display: block;
+  margin: 16px auto;
+  border-radius: 12px;
   object-fit: contain;
+}
+
+.engineering-video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 20px auto 0;
+  border-radius: 14px;
 }
 
 .engineering-card--media {
@@ -2204,3 +2213,4 @@ p {
     font-size: 0.85rem;
   }
 }
+
