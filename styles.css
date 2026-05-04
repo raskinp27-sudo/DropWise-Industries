@@ -525,6 +525,38 @@ main {
   object-fit: contain;
 }
 
+.cad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cad-grid img {
+  width: 100%;
+  max-width: none;
+  height: 180px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f8f8f8;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .cad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cad-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .engineering-video {
   width: 100%;
   max-width: 600px;
@@ -2213,4 +2245,5 @@ p {
     font-size: 0.85rem;
   }
 }
+
 
