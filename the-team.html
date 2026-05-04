@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropWise Industries | The Team</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -30,52 +31,56 @@
   <main class="landing-main subpage-main">
     <section class="subpage-hero">
       <div class="subpage-section">
-        <h1 class="subpage-title">The Team</h1>
-        <p class="subpage-intro">The DropWise Industries team behind Dropix and this site—design, build, and communication.</p>
+        <h1 class="subpage-title reveal-scale">The Team</h1>
+        <p class="subpage-intro reveal">The DropWise Industries team behind Dropix and this site—design, build, and communication.</p>
       </div>
     </section>
 
     <section class="subpage-section team-profiles">
       <div class="profile-grid">
         <article class="profile-card">
-          <img src="pauly.png" alt="Pauly Raskin" class="profile-photo" />
-          <h2 class="profile-name">Paul Raskin</h2>
-          <p class="profile-school"><strong>School:</strong> Golda Och Academy</p>
-          <p class="profile-role-label"><strong>Role</strong></p>
-          <ul class="profile-role-list">
-            <li>Coded and wired the weight sensor and solenoid for Arduino</li>
-            <li>Built and coded the website using Cursor and GitHub</li>
-            <li>Designed and 3D printed a solenoid mount using Fusion</li>
-            <li>Designed the logo and name</li>
-          </ul>
-          <p class="team-contact"><a href="mailto:raskinp27@goastudent.org">raskinp27@goastudent.org</a></p>
+          <img src="pauly.png" alt="Pauly Raskin" class="profile-photo reveal-scale" />
+          <div class="profile-body reveal-right">
+            <h2 class="profile-name">Pauly Raskin</h2>
+            <p class="profile-school"><strong>School:</strong> Golda Och Academy</p>
+            <p class="profile-role-label"><strong>Role</strong></p>
+            <ul class="profile-role-list">
+              <li>Wired and coded the weight sensor and solenoid for Arduino</li>
+              <li>Built and coded the website</li>
+              <li>3D printed a solenoid mount using Fusion</li>
+              <li>Designed the logo and name</li>
+            </ul>
+            <p class="team-contact"><a href="mailto:raskinp27@goastudent.org">raskinp27@goastudent.org</a></p>
+          </div>
         </article>
 
         <article class="profile-card">
-          <img src="alma.png" alt="Alma Adiel" class="profile-photo" />
-          <h2 class="profile-name">Alma Adiel</h2>
-          <p class="profile-school"><strong>School:</strong> Golda Och Academy</p>
-          <p class="profile-role-label"><strong>Role</strong></p>
-          <ul class="profile-role-list">
-            <li>Coded and wired the LCD and fingerprint sensor for Arduino</li>
-            <li>Designed and laser cut the product body using Fusion</li>
-            <li>Designed the logo and name</li>
-          </ul>
-          <p class="team-contact"><a href="mailto:aadiel27@goastudent.org">aadiel27@goastudent.org</a></p>
+          <img src="alma.png" alt="Alma Adiel" class="profile-photo reveal-scale" />
+          <div class="profile-body reveal-left">
+            <h2 class="profile-name">Alma Adiel</h2>
+            <p class="profile-school"><strong>School:</strong> Golda Och Academy</p>
+            <p class="profile-role-label"><strong>Role</strong></p>
+            <ul class="profile-role-list">
+              <li>Wired and coded the LCD and fingerprint sensor for Arduino</li>
+              <li>Designed and laser cut the product body using Fusion</li>
+              <li>Designed the logo and name</li>
+            </ul>
+            <p class="team-contact"><a href="mailto:aadiel27@goastudent.org">aadiel27@goastudent.org</a></p>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="subpage-section team-extra">
-      <h2 class="section-heading">Acknowledgements</h2>
-      <p class="intro-text">
+      <h2 class="section-heading reveal-left">Acknowledgements</h2>
+      <p class="intro-text reveal">
         Thanks to our teachers and mentors for feedback on engineering and presentation; to open documentation and example projects for sensors, displays, and fabrication workflows; and to peers who tested ideas and helped refine the user story for secure package receiving.
       </p>
     </section>
 
     <section class="subpage-section team-extra">
-      <h2 class="section-heading">AI Citation</h2>
-      <p class="intro-text ai-citation">
+      <h2 class="section-heading reveal-right">AI Citation</h2>
+      <p class="intro-text ai-citation reveal-scale">
         AI was used to help generate ideas, and Cursor was used to assist in designing and coding the website.
       </p>
     </section>
@@ -85,9 +90,6 @@
     <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
 
