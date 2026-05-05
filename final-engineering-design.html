@@ -6,6 +6,17 @@
   <title>DropWise Industries | Final Engineering Design</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="site.js" defer></script>
+  <style>
+    .engineering-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 800px) {
+      .engineering-card.full-width {
+        grid-column: auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -95,12 +106,7 @@
           </video>
         </div>
 
-        <div class="engineering-card reveal">
-          <h2>Photo Rendering</h2>
-          <p>Placeholder &mdash; content coming soon.</p>
-        </div>
-
-        <div class="engineering-card reveal">
+        <div class="engineering-card reveal full-width">
           <h2>Images of Various Design Iterations</h2>
           <p>Placeholder &mdash; content coming soon.</p>
         </div>
