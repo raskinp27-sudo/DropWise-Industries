@@ -174,7 +174,62 @@
 
     <section class="subpage-section matrix-section">
       <h2 class="section-heading reveal-left">Decision Matrix</h2>
-      <img src="graph.png" alt="Decision Matrix worksheet for Dropix solution selection" class="decision-matrix-image reveal-scale" />
+      <div class="decision-matrix-worksheet reveal-scale">
+        <div class="decision-matrix-ranking-box">
+          <h3 class="decision-matrix-ranking-title">Numeric Ranking System</h3>
+          <ul class="decision-matrix-ranking-list">
+            <li><span class="dm-rank-label">High</span> <span class="dm-rank-eq">= 3</span></li>
+            <li><span class="dm-rank-label">Medium</span> <span class="dm-rank-eq">= 2</span></li>
+            <li><span class="dm-rank-label">Low</span> <span class="dm-rank-eq">= 1</span></li>
+            <li><span class="dm-rank-label">Not at all</span> <span class="dm-rank-eq">= 0</span></li>
+          </ul>
+        </div>
+        <div class="decision-matrix-scroll" role="region" aria-label="Decision matrix scores">
+          <table class="decision-matrix-table">
+            <caption class="visually-hidden">Solution comparison with numeric scores from 0 to 3</caption>
+            <thead>
+              <tr>
+                <th scope="col">Solution</th>
+                <th scope="col">Feasibility</th>
+                <th scope="col">Effectiveness</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Time</th>
+                <th scope="col">Satisfy Course Requirements</th>
+                <th scope="col">Overall Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Bar Lock</th>
+                <td>2</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td>3</td>
+                <td class="dm-overall-score">13</td>
+              </tr>
+              <tr>
+                <th scope="row">Key Lock</th>
+                <td>2</td>
+                <td>3</td>
+                <td>3</td>
+                <td>2</td>
+                <td>3</td>
+                <td class="dm-overall-score">13</td>
+              </tr>
+              <tr class="dm-matrix-top">
+                <th scope="row">Dropix</th>
+                <td>2</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td>3</td>
+                <td class="dm-overall-score">14</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
     <section class="subpage-section competitive-advantage">
@@ -195,4 +250,3 @@
 
 </body>
 </html>
-
