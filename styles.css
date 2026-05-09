@@ -1029,15 +1029,147 @@ main {
   margin-bottom: 0.25rem;
 }
 
-/* Ideate: Decision Matrix worksheet image */
-.decision-matrix-image {
-  display: block;
-  width: 100%;
-  max-width: 900px;
-  height: auto;
+/* Ideate: Decision Matrix coded worksheet */
+.decision-matrix-worksheet {
+  max-width: 960px;
   margin: 24px auto 0;
-  object-fit: contain;
-  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.decision-matrix-ranking-box {
+  align-self: center;
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.95rem 1.15rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 109, 119, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.decision-matrix-ranking-title {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.decision-matrix-ranking-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #394357;
+  columns: 2;
+  column-gap: 1rem;
+}
+
+.decision-matrix-ranking-list li {
+  break-inside: avoid;
+  display: flex;
+  gap: 0.35rem;
+  justify-content: space-between;
+  padding: 0.12rem 0;
+  border-bottom: 1px solid rgba(0, 109, 119, 0.08);
+}
+
+.decision-matrix-ranking-list li:last-child {
+  border-bottom: none;
+}
+
+.dm-rank-label {
+  font-weight: 500;
+}
+
+.dm-rank-eq {
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-matrix-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+.decision-matrix-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.decision-matrix-table caption.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.decision-matrix-table thead th {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  text-align: center;
+  padding: 0.85rem 0.6rem;
+  background: linear-gradient(135deg, rgba(0, 109, 119, 0.12), rgba(64, 78, 124, 0.08));
+  color: var(--color-dark);
+  border-bottom: 2px solid rgba(0, 109, 119, 0.15);
+}
+
+.decision-matrix-table thead th:first-child {
+  text-align: left;
+  padding-left: 0.9rem;
+}
+
+.decision-matrix-table tbody th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.85rem 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.decision-matrix-table tbody td {
+  padding: 0.85rem 0.65rem;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-variant-numeric: tabular-nums;
+}
+
+.decision-matrix-table tbody tr:hover th,
+.decision-matrix-table tbody tr:hover td {
+  background: rgba(184, 192, 255, 0.06);
+}
+
+.decision-matrix-table .dm-overall-score {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.decision-matrix-table tbody tr.dm-matrix-top th,
+.decision-matrix-table tbody tr.dm-matrix-top td {
+  background: rgba(121, 184, 169, 0.12);
+}
+
+.decision-matrix-table tbody tr.dm-matrix-top:hover th,
+.decision-matrix-table tbody tr.dm-matrix-top:hover td {
+  background: rgba(121, 184, 169, 0.18);
 }
 
 /* Team: structured profiles */
@@ -2270,4 +2402,14 @@ p {
     min-width: 640px;
     font-size: 0.85rem;
   }
+
+  .decision-matrix-ranking-list {
+    columns: 1;
+  }
+
+  .decision-matrix-table {
+    min-width: 640px;
+    font-size: 0.85rem;
+  }
 }
+
