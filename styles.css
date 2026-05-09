@@ -2310,6 +2310,207 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
+/* Test & Reflect page */
+
+.test-reflect-main {
+  padding-bottom: 3rem;
+}
+
+.test-reflect-main .research-panel-copy,
+.test-feedback-panel p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #394357;
+}
+
+.test-feedback-panel .test-panel-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  color: var(--color-dark);
+  font-weight: 400;
+}
+
+.test-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.35rem;
+  margin-top: 0.5rem;
+}
+
+.test-metric-card {
+  margin: 0;
+  padding: 1.35rem 1.35rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 109, 119, 0.11);
+  border-radius: 18px;
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.07),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.test-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.92) inset;
+}
+
+.test-metric-score {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 4vw, 2rem);
+  color: var(--color-primary);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.test-metric-denom {
+  font-size: 0.55em;
+  opacity: 0.82;
+}
+
+.test-metric-label {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.test-metric-note {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.test-subheading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2vw, 1.28rem);
+  color: var(--color-dark);
+  margin: 2.35rem 0 0.85rem;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.test-data-lead {
+  text-align: left;
+  max-width: 40rem;
+  margin-bottom: 0;
+}
+
+.testing-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1.35rem;
+}
+
+.test-graph-card {
+  margin: 0;
+  padding: 1.1rem 1.15rem 1.35rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 109, 119, 0.09);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 26px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.94) inset;
+}
+
+.test-graph-slot {
+  position: relative;
+  border-radius: 14px;
+  min-height: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background:
+    linear-gradient(145deg, rgba(121, 184, 169, 0.16) 0%, rgba(207, 219, 213, 0.45) 50%, rgba(184, 192, 255, 0.12) 100%);
+  border: 2px dashed rgba(0, 109, 119, 0.26);
+}
+
+.test-graph-slot img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+.test-graph-slot:has(img) {
+  padding: 0.65rem;
+  min-height: 0;
+  border-style: solid;
+  border-color: rgba(0, 109, 119, 0.14);
+  background: rgba(248, 250, 252, 0.96);
+}
+
+.test-graph-slot:has(img) .test-graph-coming {
+  display: none;
+}
+
+.test-graph-coming {
+  margin: 0;
+  font-size: 0.94rem;
+  font-style: italic;
+  color: #5b677a;
+  max-width: 12rem;
+  line-height: 1.45;
+}
+
+.test-graph-card figcaption {
+  margin: 1rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-dark);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.test-feedback-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.35rem;
+  margin-top: 0.5rem;
+}
+
+.test-feedback-panel {
+  padding: 1.5rem 1.65rem;
+}
+
+.marketing-plan-box p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #394357;
+}
+
+.future-work-list {
+  margin: 0;
+  padding-left: 1.35rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #394357;
+}
+
+.future-work-list li {
+  margin-bottom: 0.55rem;
+}
+
+.future-work-list li:last-child {
+  margin-bottom: 0;
+}
+
 /* Responsive Tweaks */
 
 @media (max-width: 720px) {
@@ -2411,5 +2612,17 @@ p {
     min-width: 640px;
     font-size: 0.85rem;
   }
-}
 
+  .testing-data-grid {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .test-graph-slot {
+    min-height: 148px;
+  }
+
+  .test-metric-card {
+    padding: 1.2rem 1.2rem 1.35rem;
+  }
+}
