@@ -2332,149 +2332,171 @@ p {
   font-weight: 400;
 }
 
-.test-metric-grid {
+/* Test Results: varied chart gallery */
+.test-results-section .test-results-gallery {
+  margin-top: 0.65rem;
+}
+
+.test-results-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1.35rem;
-  margin-top: 0.5rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1.05rem, 2vw, 1.75rem);
+  align-items: stretch;
 }
 
-.test-metric-card {
+.tr-chart {
   margin: 0;
-  padding: 1.35rem 1.35rem 1.5rem;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 109, 119, 0.11);
-  border-radius: 18px;
-  box-shadow:
-    0 10px 28px rgba(0, 0, 0, 0.07),
-    0 1px 0 rgba(255, 255, 255, 0.9) inset;
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.test-metric-card:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 36px rgba(0, 0, 0, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.92) inset;
-}
-
-.test-metric-score {
-  margin: 0 0 0.4rem;
+.tr-chart-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.65rem, 4vw, 2rem);
-  color: var(--color-primary);
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.test-metric-denom {
-  font-size: 0.55em;
-  opacity: 0.82;
-}
-
-.test-metric-label {
-  margin: 0 0 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: clamp(1rem, 1.65vw, 1.22rem);
   color: var(--color-dark);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.test-metric-note {
+  letter-spacing: 0.03em;
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: #475569;
+  padding: 0 0.15rem;
+  line-height: 1.25;
 }
 
-.test-subheading {
-  font-family: var(--font-heading);
-  font-size: clamp(1.15rem, 2vw, 1.28rem);
-  color: var(--color-dark);
-  margin: 2.35rem 0 0.85rem;
-  text-align: left;
-  letter-spacing: 0.02em;
+.tr-chart-skin {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
-.test-data-lead {
-  text-align: left;
-  max-width: 40rem;
-  margin-bottom: 0;
-}
-
-.testing-data-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.35rem;
-  margin-top: 1.35rem;
-}
-
-.test-graph-card {
-  margin: 0;
-  padding: 1.1rem 1.15rem 1.35rem;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 109, 119, 0.09);
-  border-radius: 20px;
-  box-shadow:
-    0 8px 26px rgba(0, 0, 0, 0.06),
-    0 1px 0 rgba(255, 255, 255, 0.94) inset;
-}
-
-.test-graph-slot {
-  position: relative;
-  border-radius: 14px;
-  min-height: 168px;
+.tr-chart-frame {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  background:
-    linear-gradient(145deg, rgba(121, 184, 169, 0.16) 0%, rgba(207, 219, 213, 0.45) 50%, rgba(184, 192, 255, 0.12) 100%);
-  border: 2px dashed rgba(0, 109, 119, 0.26);
-}
-
-.test-graph-slot img {
-  width: 100%;
-  height: auto;
-  max-height: 220px;
-  object-fit: contain;
-  border-radius: 10px;
-  display: block;
-}
-
-.test-graph-slot:has(img) {
-  padding: 0.65rem;
+  padding: clamp(0.75rem, 2vw, 1.35rem);
   min-height: 0;
-  border-style: solid;
-  border-color: rgba(0, 109, 119, 0.14);
-  background: rgba(248, 250, 252, 0.96);
 }
 
-.test-graph-slot:has(img) .test-graph-coming {
-  display: none;
+.tr-chart-frame img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
 }
 
-.test-graph-coming {
-  margin: 0;
-  font-size: 0.94rem;
-  font-style: italic;
-  color: #5b677a;
-  max-width: 12rem;
-  line-height: 1.45;
+.tr-chart--featured {
+  grid-column: 1 / -1;
 }
 
-.test-graph-card figcaption {
-  margin: 1rem 0 0;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  color: var(--color-dark);
+.tr-chart--col-left {
+  grid-column: 1 / span 6;
+}
+
+.tr-chart--col-right {
+  grid-column: 7 / span 6;
+}
+
+.tr-chart--wide {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 56rem;
+}
+
+/* Featured — glassmorphism */
+.tr-chart--glass .tr-chart-skin {
+  border-radius: 26px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.36));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 20px 50px rgba(0, 109, 119, 0.13),
+    0 2px 0 rgba(255, 255, 255, 0.42) inset;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.tr-chart--glass .tr-chart-frame {
+  padding: clamp(1rem, 2.5vw, 1.85rem);
+}
+
+.tr-chart--glass .tr-chart-title {
+  font-size: clamp(1.1rem, 2.1vw, 1.45rem);
   text-align: center;
-  line-height: 1.35;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .tr-chart--glass .tr-chart-skin {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(0, 109, 119, 0.1);
+  }
+}
+
+/* Pair — elevated float */
+.tr-chart--float .tr-chart-skin {
+  border-radius: 22px 22px 28px 22px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 109, 119, 0.09);
+  box-shadow:
+    0 22px 55px rgba(64, 78, 124, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.96) inset;
+}
+
+/* Pair — soft gradient wash */
+.tr-chart--wash .tr-chart-skin {
+  border-radius: 24px;
+  background:
+    radial-gradient(120% 85% at 8% 0%, rgba(121, 184, 169, 0.34), transparent 52%),
+    radial-gradient(95% 75% at 100% 100%, rgba(184, 192, 255, 0.3), transparent 46%),
+    rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(0, 109, 119, 0.07);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.07);
+}
+
+/* Wide row — radial spotlight ribbon */
+.tr-chart--spotlight .tr-chart-skin {
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse 72% 100% at 50% -15%, rgba(0, 109, 119, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.93));
+  border: 1px solid rgba(0, 109, 119, 0.09);
+  box-shadow:
+    0 18px 48px rgba(0, 109, 119, 0.085),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.tr-chart--spotlight .tr-chart-title {
+  text-align: center;
+}
+
+.tr-chart--spotlight .tr-chart-frame {
+  padding: clamp(1rem, 2.9vw, 2rem);
+}
+
+/* Bottom pair — asymmetric “pill” frame */
+.tr-chart--pill .tr-chart-skin {
+  border-radius: 999px 26px 26px 999px;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid rgba(64, 78, 124, 0.09);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.06);
+}
+
+.tr-chart--pill .tr-chart-frame {
+  padding: clamp(0.65rem, 2vw, 1.2rem);
+}
+
+/* Bottom pair — inset panel */
+.tr-chart--inset .tr-chart-skin {
+  border-radius: 18px 18px 36px 18px;
+  background: rgba(248, 250, 252, 0.98);
+  border: 2px solid rgba(0, 109, 119, 0.08);
+  box-shadow:
+    0 3px 0 rgba(255, 255, 255, 0.95) inset,
+    0 16px 42px rgba(64, 78, 124, 0.08);
 }
 
 .test-feedback-split {
@@ -2613,16 +2635,13 @@ p {
     font-size: 0.85rem;
   }
 
-  .testing-data-grid {
-    grid-template-columns: 1fr;
-    gap: 1.1rem;
+  .tr-chart--col-left,
+  .tr-chart--col-right {
+    grid-column: 1 / -1;
   }
 
-  .test-graph-slot {
-    min-height: 148px;
-  }
-
-  .test-metric-card {
-    padding: 1.2rem 1.2rem 1.35rem;
+  .test-results-gallery {
+    gap: 1.15rem;
   }
 }
+
