@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DropWise Industries | Test &amp; Reflect</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -27,35 +28,150 @@
     </nav>
   </header>
 
-  <main class="landing-main subpage-main">
+  <main class="landing-main subpage-main test-reflect-main">
     <section class="subpage-hero">
       <div class="subpage-section">
-        <h1 class="subpage-title">Test &amp; Reflect</h1>
-        <p class="subpage-intro">Share how you tested Dropix, what you discovered, and how you would improve the design in the future.</p>
+        <h1 class="subpage-title reveal-scale">Test &amp; Reflect</h1>
+        <p class="subpage-intro reveal">
+          Use this page to see how we tested Dropix, what testers shared with us, and how that feedback redirected the prototype toward stronger usability and a more trustworthy enclosure.
+        </p>
       </div>
     </section>
 
-    <section class="process-steps">
-      <div class="process-step">
-        <span class="process-step-num">1</span>
-        <div class="process-step-content">
-          <strong>Testing Plan</strong>
-          <p>Describe how you tested your Dropix prototype. Explain who participated, what scenarios you tried, and what data you collected to see if the solution really makes receiving safer.</p>
-        </div>
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Testing Scenarios</h2>
+      <div class="research-panel reveal">
+        <p class="research-panel-copy">
+          Testers slid a package into the prototype, enrolled or used the fingerprint sensor, read on-screen directions on the LCD, and we recorded whether the solenoid lock engaged once the package was inside. The flow mirrored an actual drop-off—place, authorize, verify lock behavior.
+        </p>
       </div>
-      <div class="process-step">
-        <span class="process-step-num">2</span>
-        <div class="process-step-content">
-          <strong>Results &amp; Observations</strong>
-          <p>Summarize what happened during testing. Note where Dropix worked well and where users were confused, uncomfortable, or unsafe. Use charts, notes, or photos if available.</p>
-        </div>
+    </section>
+
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Test Results</h2>
+      <div class="test-metric-grid" aria-label="Summary survey averages">
+        <article class="test-metric-card reveal">
+          <p class="test-metric-score">2.1<span class="test-metric-denom">/5</span></p>
+          <h3 class="test-metric-label">Ease of use</h3>
+          <p class="test-metric-note">Lower scores mean easier operation—most testers handled Dropix quickly.</p>
+        </article>
+        <article class="test-metric-card reveal-scale">
+          <p class="test-metric-score">4.3<span class="test-metric-denom">/5</span></p>
+          <h3 class="test-metric-label">Fingerprint usability</h3>
+          <p class="test-metric-note">The sensor pathway felt dependable and understandable in session.</p>
+        </article>
+        <article class="test-metric-card reveal-left">
+          <p class="test-metric-score">4.5<span class="test-metric-denom">/5</span></p>
+          <h3 class="test-metric-label">LCD clarity</h3>
+          <p class="test-metric-note">On-device instructions communicated the steps clearly.</p>
+        </article>
+        <article class="test-metric-card reveal-right">
+          <p class="test-metric-score">3.6<span class="test-metric-denom">/5</span></p>
+          <h3 class="test-metric-label">Security confidence</h3>
+          <p class="test-metric-note">Concept trust was solid; testers still wanted a sturdier, more refined enclosure.</p>
+        </article>
+        <article class="test-metric-card reveal">
+          <p class="test-metric-score">3.9<span class="test-metric-denom">/5</span></p>
+          <h3 class="test-metric-label">Willingness to use</h3>
+          <p class="test-metric-note">Many could picture Dropix handling everyday porch deliveries.</p>
+        </article>
       </div>
-      <div class="process-step">
-        <span class="process-step-num">3</span>
-        <div class="process-step-content">
-          <strong>Reflection &amp; Next Steps</strong>
-          <p>Reflect on what you would change to make Dropix even better. Connect your ideas back to your original problem statement and explain how future improvements could create an even safer way to receive.</p>
-        </div>
+
+      <h3 class="test-subheading reveal-left">Testing Data</h3>
+      <p class="section-lead test-data-lead reveal">
+        Detailed charts for every survey metric and solenoid lock timing belong in this gallery—plug in finalized figures when exports are ready.
+      </p>
+      <div class="testing-data-grid" aria-label="Testing data visuals">
+        <figure class="test-graph-card reveal">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-ease-of-use.png" alt="Ease of use results chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>Ease of Use Results</figcaption>
+        </figure>
+        <figure class="test-graph-card reveal-scale">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-fingerprint.png" alt="Fingerprint sensor usability chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>Fingerprint Sensor Usability</figcaption>
+        </figure>
+        <figure class="test-graph-card reveal-left">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-lcd-clarity.png" alt="LCD instruction clarity chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>LCD Instruction Clarity</figcaption>
+        </figure>
+        <figure class="test-graph-card reveal-right">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-security-confidence.png" alt="Security confidence chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>Security Confidence</figcaption>
+        </figure>
+        <figure class="test-graph-card reveal">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-willingness.png" alt="Willingness to use Dropix chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>Willingness to Use Dropix</figcaption>
+        </figure>
+        <figure class="test-graph-card reveal-scale">
+          <div class="test-graph-slot">
+            <!-- <img src="graph-solenoid-timing.png" alt="Solenoid lock timing chart" loading="lazy" /> -->
+            <span class="test-graph-coming">Graph coming soon.</span>
+          </div>
+          <figcaption>Solenoid Lock Timing</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Reviewer Feedback</h2>
+      <div class="test-feedback-split">
+        <article class="research-panel test-feedback-panel reveal">
+          <h3 class="test-panel-title">What resonated</h3>
+          <p>
+            Responses skewed positive on biometrics (fingerprint), the tactile certainty of the solenoid lock, and the LCD as a readable &ldquo;copilot&rdquo; during handoff—proof the core interaction model lands.
+          </p>
+        </article>
+        <article class="research-panel test-feedback-panel reveal-scale">
+          <h3 class="test-panel-title">What to fix next</h3>
+          <p>
+            Repeated notes: wires too exposed, internals crowding the bay, capacity limited to one package, and tighter integration of parts inside the chassis for a safer, showroom-ready footprint.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Reflections and Design Iterations</h2>
+      <div class="research-panel reveal">
+        <p class="research-panel-copy">
+          Feedback confirmed Dropix tackles a recognizable pain—but engineering credibility also lives in enclosure quality. Beyond function, testers asked for disciplined cable routing, internal walls that isolate electronics from parcels, refined laser-cut tolerances, and a flow aligned with courier behavior so the prototype feels deliberate, not improvised.
+        </p>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Future Work &amp; Improvements</h2>
+      <div class="research-panel reveal-scale">
+        <ul class="content-list future-work-list">
+          <li>Harden materials for weather resistance and long-term porch exposure.</li>
+          <li>Enlarge the cavity (or modular inserts) so multiple parcels or bulkier boxes fit.</li>
+          <li>Refine mating parts and fasteners so assemblies stay square under load.</li>
+          <li>Add an ultrasonic distance sensor to recognize a closed lid and trigger locking deterministically instead of leaning on purely timed delays.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="subpage-section">
+      <h2 class="section-heading reveal-left">Marketing Plan</h2>
+      <div class="callout-box marketing-plan-box reveal">
+        <p>
+          Messaging targets homeowners, families, and lightly staffed storefronts receiving frequent shipments. Anchors stay threefold—<strong>security</strong>, <strong>ease</strong>, and <strong>peace of mind</strong>. Paid and social creatives can visualize porch pirates blocked at the moment of delivery, while owned channels (microsite plus live demo loops) dissect how fingerprint onboarding, occupancy sensing, instructional LCD states, and the solenoid interlock interoperate around a predictable package story arc.
+        </p>
       </div>
     </section>
   </main>
@@ -64,8 +180,5 @@
     <p>&copy; <span id="year"></span> DropWise Industries &middot; Dropix &ndash; The safer way to receive</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
